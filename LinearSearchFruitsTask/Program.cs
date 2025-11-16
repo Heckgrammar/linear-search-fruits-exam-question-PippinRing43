@@ -1,10 +1,15 @@
-﻿namespace LinearSearchFruitsTask
+ using System;
+ 
+ namespace LinearSearchFruitsTask
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             string[] fruits = { "banana", "apple", "orange", "pear", "grape", "pineapple" };
+            
+            Console.WriteLine("What word do you want to find?");
+            Console.WriteLine(Find(fruits, Console.ReadLine()));
 
             // Your program should:
             // Ask the user what word they would like to find
@@ -13,6 +18,18 @@
             
             // You must write your own linear search routine and not use any built-in fuctions available in C#
             // You should use meaningful variable names
+        }
+        
+        static bool Find(string[] array, string key) 
+        {
+            for (int i = 0; i < array.Length; i++) 
+            {
+                if (array[i] == key)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
